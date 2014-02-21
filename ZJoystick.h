@@ -51,7 +51,7 @@ typedef enum {
 #define kJoystickRadius 50.0f
 #define kControlActionInterval 0.2f
 
-@interface ZJoystick : CCSprite <CCTargetedTouchDelegate>{
+@interface ZJoystick : CCSprite <CCTouchOneByOneDelegate, CCTouchAllAtOnceDelegate> {
 	CCTexture2D				*_normalTexture;            //background normal (container)
 	CCTexture2D				*_selectedTexture;          //background selected (container)
 	NSString				*_controllerSpriteFile;     //controller sprite sfile

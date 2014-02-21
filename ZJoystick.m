@@ -93,10 +93,10 @@ CGFloat getDistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
 -(CGRect) getBoundingRect
 {
 	CGSize size = [self contentSize];
-	size.width	*= scaleX_;
-	size.height *= scaleY_;
-	return CGRectMake(position_.x - size.width * anchorPoint_.x, 
-					  position_.y - size.height * anchorPoint_.y, 
+	size.width	*= _scaleX;
+	size.height *= _scaleY;
+	return CGRectMake(_position.x - size.width * _anchorPoint.x,
+					  _position.y - size.height * _anchorPoint.y,
 					  size.width, size.height);
 }
 
@@ -262,7 +262,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 	//this is when the touch is inside the joystick
 	CGFloat actualPointDistance = getDistanceBetweenTwoPoints(self.position, location);
 	
-    NSLog(@"Actual Distance - %f", actualPointDistance);
+    CCLOG(@"Actual Distance - %f", actualPointDistance);
     
 	//check if the touch point is within the joystick container's radius
 	if (actualPointDistance <= _joystickRadius){
@@ -406,7 +406,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 			CGPoint controllerPoint = CGPointMake(point.x + self.contentSize.width/2, point.y + self.contentSize.height/2);
 			
 			//CCLOG(@"POINT VALUE = (%f, %f)", point.x, point.y);
-			//CCLOG(@"SQUAREROOT of 1 = %f",sqrt(1.0f));		
+			//CCLOG(@"SQUAREROOT of 1 = %f",sqrt(1.0f));
 			//CCLOG(@"CONTROLLER POSITION (%f, %f)",controllerPoint.x, controllerPoint.y);
 			
 			//Point Ratio
